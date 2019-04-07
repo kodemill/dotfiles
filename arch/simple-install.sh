@@ -94,9 +94,7 @@ arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=boot --bootloa
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 arch-chroot /mnt useradd -mU -s /usr/bin/bash -G wheel "$user"
-# arch-chroot /mnt chsh -s /usr/bin/bash
+arch-chroot /mnt echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-wheel
 
 echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
-
-# arch-chroot /mnt
