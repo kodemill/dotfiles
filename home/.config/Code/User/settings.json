@@ -1,0 +1,135 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.overviewRulerBorder": false,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#35121e"
+  },
+  "workbench.colorTheme": "Horizon Bold",
+  "workbench.list.keyboardNavigation": "simple",
+  "workbench.list.automaticKeyboardNavigation": false,
+  "editor.renderWhitespace": "all",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 15,
+  "editor.suggestSelection": "first",
+  "editor.defaultFormatter": "remimarsal.prettier-now",
+  "explorer.openEditors.visible": 0,
+  "explorer.autoReveal": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": false,
+  "javascript.suggestionActions.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "files.insertFinalNewline": true,
+  "files.maxMemoryForLargeFilesMB": 8096,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  /*
+  GitLens
+  */
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  /*
+    Prettier
+  */
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  // "prettier.jsonEnable": [] // Will disable Prettier Misc on JSON files
+  "prettier.openOutput": false,
+  "autoAlign.enabled": {
+    "csv": true,
+    "bsv": true,
+    "tf": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "remimarsal.prettier-now"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "remimarsal.prettier-now"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "remimarsal.prettier-now"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  
+
+  "standard.usePackageJson": true,
+  /*
+  terraform
+  */
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      "**/*"
+    ]
+  },
+  /*
+  vsicons
+  */
+  "vsicons.projectDetection.autoReload": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  /*
+    cSpell
+ */
+  "cSpell.language": "en,en-US",
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "go",
+    "handlebars",
+    "html",
+    "jade",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "pub",
+    "python",
+    "restructuredtext",
+    "rust",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ],
+  "cSpell.userWords": [
+    "JSONB",
+    "gluegun",
+    "healthcheck",
+    "kodemill",
+    "openapi",
+    "promisify",
+    "submodule",
+    "walkthrough"
+  ],
+}

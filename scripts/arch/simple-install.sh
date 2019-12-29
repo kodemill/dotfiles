@@ -1,7 +1,6 @@
 #! /bin/bash
 set -euo pipefail
 
-timestamp=$(date -u +%F-%H-%M-%S)
 ui_title="Arch Linux install script"
 
 function getUserAndPassword () {
@@ -66,11 +65,14 @@ function rankMirrors () {
     rankmirrors -n 5 - > /etc/pacman.d/mirrorlist
 }
 
+# function 
+
 getHostname
 getUserAndPassword
 getDevice
 
 # save stderr & stdout
+timestamp=$(date -u +%F-%H-%M-%S)
 exec 1> >(tee "stdout_${timestamp}.log")
 exec 2> >(tee "stderr_${timestamp}.log")
 
@@ -84,17 +86,19 @@ mount "${part_boot}" /mnt/boot
 # install
 timedatectl set-ntp true
 rankMirrors
+pacman -Sy --noconfirm archlinux-keyring
 pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo $hostname > /mnt/etc/hostname
 
-arch-chroot /mnt pacman --noconfirm --needed -S grub efibootmgr
-arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=boot --bootloader-id=GRUB
-arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-
 arch-chroot /mnt useradd -mU -s /usr/bin/bash -G wheel "$user"
 arch-chroot /mnt echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/10-wheel
-
 echo "$user:$password" | chpasswd --root /mnt
 echo "root:$password" | chpasswd --root /mnt
+
+# run setup script in chroot
+current_dir=$(dirname $(readlink -f $0))
+cp "$current_dir/chroot-setup.sh" /mnt/chroot-setup.sh
+arch-chroot /mnt bash chroot-setup.sh
+rm /mnt/chroot-setup.sh

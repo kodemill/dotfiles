@@ -1,0 +1,4 @@
+[submodule "home/.config/zsh/plugins/powerlevel10k"]
+  path = home/.config/zsh/plugins/powerlevel10k
+  url = https://github.com/romkatv/powerlevel10k.git
+
