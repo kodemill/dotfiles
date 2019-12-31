@@ -1,0 +1,3 @@
+"name","description","install"
+"vscode","VSCode editor https://code.visualstudio.com/docs","sudo snap install --classic code"
+"what"," CLI utility for displaying current network utilization by process https://github.com/imsnif/what","__what"

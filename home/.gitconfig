@@ -1,0 +1,36 @@
+# This is Git's per-user configuration file.
+[user]
+  name = Miklos Suveges
+  email = miklos.suveges@gmail.com
+[core]
+  autocrlf = input
+  editor = code --wait
+  excludesfile = ~/.gitignore
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[alias]
+  a = add -A
+  al = config --get-regexp '^alias\\.'
+  b = branch
+  bd = branch -D
+  ca = commit --amend
+  co = checkout
+  cob = checkout -b
+  cm = commit
+  d = diff
+  dc = diff --cached
+  dl = diff HEAD~1..HEAD
+  l = log --pretty=format:'%h [%an] %s | %ar' -n 10
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all --author="suveges"
+  p = pull
+  po = push origin master
+  pr = pull --rebase origin master
+  rh = reset --hard
+  s = status

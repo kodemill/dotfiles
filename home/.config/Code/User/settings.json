@@ -132,4 +132,8 @@
     "submodule",
     "walkthrough"
   ],
+  "[shellscript]": {
+    "editor.colorDecorators": false
+  },
+  "bashIde.highlightParsingErrors": false,
 }

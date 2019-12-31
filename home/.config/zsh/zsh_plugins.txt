@@ -1,0 +1,9 @@
+caarlos0/ports kind:path
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+b4b4r07/emoji-cli
+robbyrussell/oh-my-zsh path:plugins/aws
+robbyrussell/oh-my-zsh path:plugins/docker
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/npm
+romkatv/powerlevel10k

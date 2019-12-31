@@ -1,0 +1,15 @@
+# Node
+npm-debug.log
+node_modules/
+
+# IntelliJ
+.idea/
+
+# vi
+*~
+
+# General
+log/
+*.log
+
+# etc...
