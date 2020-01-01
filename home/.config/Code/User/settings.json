@@ -136,4 +136,7 @@
     "editor.colorDecorators": false
   },
   "bashIde.highlightParsingErrors": false,
+  "files.associations": {
+    ".functions": "shellscript"
+  },
 }

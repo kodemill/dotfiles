@@ -22,4 +22,5 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# export PATH="$HOME/.cargo/bin:$PATH"
+export ZDOTDIR="$HOME/.config/zsh"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"

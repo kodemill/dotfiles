@@ -1,12 +1,11 @@
 #!/bin/bash
 
+DOTFILES=${1:-$(readlink -f "$(dirname $0)/../")}
+
 install_dotfiles () {
-  echo 'Symlinking dotfiles'
-  for file in $(find ./home -type f \
-  ! -path '*.git*' \
-  # ! -path '*/powerlevel10k/*' \
-  ) ; do
-    relative=$(realpath $file --relative-to ./home)
+  echo 'Symlinking dotfiles' $DOTFILES
+  for file in $(find $DOTFILES/home -type f ! -path '*.git*') ; do
+    relative=$(realpath $file --relative-to "$DOTFILES/home")
     dest="$(realpath ~)/$relative"
     if [ -e $dest ]; then
       backup="$(realpath $1)/$relative"
@@ -24,28 +23,28 @@ install_dotfiles () {
 
 # }
 
-# install_dotfiles  ~/.backup
+install_dotfiles  ~/.backup
 
-numlines=$(tput lines)
-numcols=$(tput cols)
-numcols=$(expr $numcols - 1)
-separator_line=$(for i in $(seq 0 $numcols);do printf "%s" "-";done;printf "\n")
-tput cup $numlines
-echo $separator_line
-echo ===
-sleep 1
-tput cup $numlines
-echo $separator_line
-echo =====
-sleep 1
-tput cup $numlines
-echo $separator_line
-echo =======
-sleep 1
-tput cup $numlines
-echo $separator_line
-echo =========
-sleep 1
-tput cup $numlines
-echo $separator_line
-echo ===========
+# numlines=$(tput lines)
+# numcols=$(tput cols)
+# numcols=$(expr $numcols - 1)
+# separator_line=$(for i in $(seq 0 $numcols);do printf "%s" "-";done;printf "\n")
+# tput cup $numlines
+# echo $separator_line
+# echo ===
+# sleep 1
+# tput cup $numlines
+# echo $separator_line
+# echo =====
+# sleep 1
+# tput cup $numlines
+# echo $separator_line
+# echo =======
+# sleep 1
+# tput cup $numlines
+# echo $separator_line
+# echo =========
+# sleep 1
+# tput cup $numlines
+# echo $separator_line
+# echo ===========

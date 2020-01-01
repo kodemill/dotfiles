@@ -29,3 +29,17 @@ setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 # setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+# fasd & fzf change directory - open best matched file using `fasd` if given argument, filter output of `fasd` using `fzf` else
+v() {
+  echo '$EDITOR' $EDITOR
+    [ $# -gt 0 ] && fasd -f -e code --wait "$*" && return
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+}
+
+eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install)"
+
+autoload -Uz compinit
+compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
