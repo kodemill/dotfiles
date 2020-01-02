@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# DOTFILES=${1:-$(readlink -f "$(dirname $0)/../")}
 SRC_HOME=~/.local
 BIN_HOME=~/.local/bin  # /usr/local/bin
 
@@ -8,10 +9,16 @@ __fzf () {
   $SOURCE_HOME/.fzf/install --xdg --key-bindings --completion --no-update-rc --no-bash --no-fish
 }
 
+__fasd () {
+  sudo add-apt-repository -y ppa:aacebedo/fasd
+  sudo apt-get update
+  sudo apt-get install -y fasd
+}
+
 __antibody () {
 # http://getantibody.github.io/
   curl -sfL git.io/antibody | sh -s - -b $BIN_HOME
-  antibody bundle < ~/.config/zsh/zsh_plugins.txt > ~/.zsh_plugins.sh
+  antibody bundle < $HOME/.config/zsh/zsh_plugins.txt > $HOME/.config/zsh/generated-zsh-plugins.zsh
   antibody update
 }
 

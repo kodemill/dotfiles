@@ -1,1 +1,0 @@
-/home/kodemill/prj/dotfiles/home/.profile
