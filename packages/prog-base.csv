@@ -1,11 +1,7 @@
 "name","description","install"
-"build essentials","build-essentials, manpages","sudo apt install -y build-essential manpages-dev"
-"python","python and pip 2&3","sudo apt install -y python3 python3-pip python python-pip"
-"curl","curl","sudo apt install curl -y"
-"git","Git version control","sudo apt install git -y"
-"zsh","Z shell","sudo apt install zsh -y"
-"rust","Rust & Cargo","__rust"
-"kitty","Kitty - GPU powered terminal ","__kitty"
-"antibody","zsh plugin manager","__antibody"
-"bat","better cat https://github.com/sharkdp/bat","__bat"
-"fzf","Fuzzy Search support","__fzf"
+"base-devel","arch base-devel if it's not installed yet","base-devel"
+"python","python and pip 2&3","python python-pip python2 python2-pip"
+"git",,"git"
+
+
+# "rust","Rust & Cargo","__rust"
