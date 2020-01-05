@@ -10,7 +10,8 @@ dotfiles=${1:-$(readlink -f "$(dirname $0)/../")}
 
 install_dotfiles () {
   echo 'Symlinking dotfiles' $dotfiles
-  for file in "$(find $dotfiles/home -type f ! -path '*.git*')" ; do
+  IFS=$'\n'
+  for file in $(find $dotfiles/home -type f ! -path '*.git*') ; do
     relative=$(realpath "$file" --relative-to "$dotfiles/home")
     dest="$(realpath ~)/$relative"
     if [ -e $dest ]; then
@@ -56,20 +57,20 @@ install_fonts () {
 }
 
 
-vscode_extensions_list="$HOME/.config/Code - OSS/User/vscode-extensions.txt"
-vscode_extensions_export () { code --list-extensions > $vscode_extensions_list ; }
-vscode_extensions_import () {
-  empty='^\s*$'
-  comment='^\s*\#'
-  sed -e "/$empty/d;/$comment/d" ${1:-"$vscode_extensions_list"} |\
-  while IFS=, read -r extension ; do
-    echo ">> Installing VSCode extension: $extension"
-    code --install-extension "$extension"
-  done
-}
+# vscode_extensions_list="$HOME/.config/Code - OSS/User/vscode-extensions.txt"
+# vscode_extensions_export () { code --list-extensions > $vscode_extensions_list ; }
+# vscode_extensions_import () {
+#   empty='^\s*$'
+#   comment='^\s*\#'
+#   sed -e "/$empty/d;/$comment/d" ${1:-"$vscode_extensions_list"} |\
+#   while IFS=, read -r extension ; do
+#     echo ">> Installing VSCode extension: $extension"
+#     code --install-extension "$extension"
+#   done
+# }
 
-echo 'Installing dotfiles'
+# echo 'Installing dotfiles'
 install_dotfiles
-echo 'Post install scripts'
-setup_zsh
-vscode_extensions_import
+# echo 'Post install scripts'
+# setup_zsh
+# vscode_extensions_import
