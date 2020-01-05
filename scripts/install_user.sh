@@ -11,17 +11,17 @@ dotfiles=${1:-$(readlink -f "$(dirname $0)/../")}
 install_dotfiles () {
   echo 'Symlinking dotfiles' $dotfiles
   for file in "$(find $dotfiles/home -type f ! -path '*.git*')" ; do
-    relative=$(realpath $file --relative-to "$dotfiles/home")
+    relative=$(realpath "$file" --relative-to "$dotfiles/home")
     dest="$(realpath ~)/$relative"
     if [ -e $dest ]; then
       backup="$HOME/.dotbackup/$relative"
-      mkdir -p $(dirname $backup)
-      mv $dest $backup
-      printf 'backup: %s\n' $backup
+      mkdir -p $(dirname "$backup")
+      mv "$dest" "$backup"
+      printf 'backup: %s\n' "$backup"
     fi
-    mkdir -p $(dirname $dest)
+    mkdir -p $(dirname "$dest")
     printf 'symlink:'
-    ln -svf $(realpath $file) $dest
+    ln -svf $(realpath "$file") "$dest"
   done
 }
 

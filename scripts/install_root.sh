@@ -89,7 +89,7 @@ sudo -u "$username" $dotfiles/scripts/install_user.sh | tee -a $logfile | \
         --backtitle 'Arch customization script' \
         --title "Running user setup: $1" \
         --progressbox "$message" 35 160
-
+clear
 log 'Setting shell for user'
 set_shell
 
