@@ -71,8 +71,8 @@ set_shell () {
 }
 
 log 'Script start\n'
-# log 'Setting up user'
-# setup_user
+log 'Setting up user'
+setup_user
 log 'Installing base programs'
 install_program_pacman dialog
 install_programs $dotfiles/packages/prog-base.csv 'Installing base programs'
