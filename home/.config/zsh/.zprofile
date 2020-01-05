@@ -13,6 +13,3 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
-
-
-export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"

@@ -67,8 +67,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  
-
   "standard.usePackageJson": true,
   /*
   terraform

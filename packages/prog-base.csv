@@ -1,7 +1,5 @@
-"name","description","install"
-"base-devel","arch base-devel if it's not installed yet","base-devel"
-"python","python and pip 2&3","python python-pip python2 python2-pip"
-"git",,"git"
-
-
-# "rust","Rust & Cargo","__rust"
+#"name","description","install","install with"
+"base-devel","arch base-devel if it's not installed yet","base-devel",pac
+"python","python and pip 2&3","python python-pip python2 python2-pip",pac
+"git","","git",pac
+"yay","aur package manager (pacman wrapper)","yay",pac
