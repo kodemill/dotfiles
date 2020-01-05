@@ -10,7 +10,6 @@ fi
 username=${1:-'vbox'}
 dotfiles=${2:-$(readlink -f "$(dirname $0)/../")}
 logfile=${3:-'out.log'}
-echo $logfile
 
 separator='========================================================================================================='
 log () {
@@ -70,6 +69,22 @@ set_shell () {
   sed -i "s/^$username:\(.*\):\/bin\/.*/$username:\1:\/bin\/zsh/" /etc/passwd
 }
 
+install_vbox () {
+  kernel_version=$(IFS='.' read -r -a array <<< "$(uname -r)" ; echo "${array[0]}${array[1]}")
+  echo $kernel_version
+  install_program_pacman  "virtualbox linux$kernel_version-virtualbox-host-modules"
+  gpasswd -a $username vboxusers
+}
+
+install_docker () {
+  install_program_pacman "docker"
+  systemctl enable docker.service
+  systemctl start docker.service
+  gpasswd -a $username docker
+}
+
+# execute
+
 log 'Script start\n'
 log 'Setting up user'
 setup_user
@@ -81,6 +96,10 @@ install_programs $dotfiles/packages/prog-base.csv 'Installing base programs'
 log 'Preparing development environment'
 install_programs $dotfiles/packages/prog-dev.csv 'Preparing development environment'
 clear
+
+install_docker
+install_vbox
+
 log 'Running user setup'
 sudo -u "$username" $dotfiles/scripts/install_user.sh | tee -a $logfile | \
       dialog \
