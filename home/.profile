@@ -1,1 +1,1 @@
-/home/kodemill/prj/dotfiles/home/.config/zsh/.zprofile
+./home/.config/zsh/.zprofile

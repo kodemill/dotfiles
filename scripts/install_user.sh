@@ -10,7 +10,7 @@ dotfiles=${1:-$(readlink -f "$(dirname $0)/../")}
 
 install_dotfiles () {
   echo 'Symlinking dotfiles' $dotfiles
-  for file in $(find $dotfiles/home -type f ! -path '*.git*') ; do
+  for file in "$(find $dotfiles/home -type f ! -path '*.git*')" ; do
     relative=$(realpath $file --relative-to "$dotfiles/home")
     dest="$(realpath ~)/$relative"
     if [ -e $dest ]; then
