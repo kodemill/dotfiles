@@ -72,7 +72,9 @@ set_shell () {
 install_vbox () {
   kernel_version=$(IFS='.' read -r -a array <<< "$(uname -r)" ; echo "${array[0]}${array[1]}")
   echo $kernel_version
-  install_program_pacman  "virtualbox linux$kernel_version-virtualbox-host-modules"
+  install_args="virtualbox linux$kernel_version-virtualbox-host-modules"
+echo "$install_args"
+  install_program_pacman $install_args
   gpasswd -a $username vboxusers
 }
 
@@ -83,18 +85,18 @@ install_docker () {
   gpasswd -a $username docker
 }
 
-# execute
-
 log 'Script start\n'
 log 'Setting up user'
 setup_user
 log 'Installing base programs'
 install_program_pacman dialog
 install_programs $dotfiles/packages/prog-base.csv 'Installing base programs'
-# log 'Pacman setup'
-# setup_pacman
+log 'Pacman setup'
+setup_pacman
 log 'Preparing development environment'
 install_programs $dotfiles/packages/prog-dev.csv 'Preparing development environment'
+log 'Installing user programs'
+install_programs $dotfiles/packages/prog-user.csv 'Installing user programs'
 clear
 
 install_docker
