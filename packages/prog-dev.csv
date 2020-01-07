@@ -17,4 +17,4 @@
 "Java","OpenJDK and docs","jdk-openjdk openjdk-doc openjdk-src",pac
 "emoji fonts","Color noto emoji font","noto-fonts-emoji",pac
 "neofetch","terminal OS info","neofetch",yay
-
+"bind-tools","bind-tools provides dig(1), host(1), nslookup(1) and a bunch of dnssec- tools.","bind-tools",pac

@@ -86,7 +86,7 @@
       load                  # CPU load
       time                    # current time
       # =========================[ Line #2 ]=========================
-      public_ip             # public IP address
+      # public_ip             # public IP address
       # newline
       # proxy                 # system-wide http/https/ftp proxy
       # battery               # internal battery

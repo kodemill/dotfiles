@@ -1,10 +1,19 @@
 caarlos0/ports kind:path
+
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-b4b4r07/emoji-cli
 wookayin/fzf-fasd
+lukechilds/zsh-nvm
+
 robbyrussell/oh-my-zsh path:plugins/aws
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/git
 robbyrussell/oh-my-zsh path:plugins/npm
+#robbyrussell/oh-my-zsh path:plugins/nvm
+#robbyrussell/oh-my-zsh path:plugins/emoji
+robbyrussell/oh-my-zsh path:plugins/fzf
+robbyrussell/oh-my-zsh path:plugins/terraform
+
 romkatv/powerlevel10k
+
+b4b4r07/emoji-cli
