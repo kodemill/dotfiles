@@ -8,7 +8,7 @@ lukechilds/zsh-nvm
 robbyrussell/oh-my-zsh path:plugins/aws
 robbyrussell/oh-my-zsh path:plugins/docker
 robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/npm
+#robbyrussell/oh-my-zsh path:plugins/npm
 #robbyrussell/oh-my-zsh path:plugins/nvm
 #robbyrussell/oh-my-zsh path:plugins/emoji
 robbyrussell/oh-my-zsh path:plugins/fzf
