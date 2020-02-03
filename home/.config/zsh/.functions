@@ -63,3 +63,27 @@ fshow() {
                 {}
 FZF-EOF"
 }
+
+aws_mfa() {
+  echo '=== AWS MFA authenticator ==='
+  [[ -z "$AWS_PROFILE" ]] && echo '$AWS_PROFILE is not set!' && return
+  local user_arn=$(aws sts get-caller-identity | jq --raw-output '.Arn')
+  local username=$(echo $user_arn | sed 's!arn:aws:iam::.*:user/!!')
+  local mfa_device_arn=$(aws iam list-mfa-devices --user-name "$username" | jq --raw-output '.MFADevices[0].SerialNumber')
+  local token
+  echo "Hi $username! Pls gib mfa token from device \"$mfa_device_arn\", o-ke?"
+  read token
+  local session_token=$(aws sts get-session-token --serial-number "$mfa_device_arn" --token-code "$token")
+  export AWS_SESSION_TOKEN=$(echo "$session_token" | jq --raw-output '.Credentials.SessionToken')
+  export AWS_SECRET_ACCESS_KEY=$(echo "$session_token" | jq --raw-output '.Credentials.SecretAccessKey')
+  export AWS_ACCESS_KEY_ID=$(echo "$session_token" | jq --raw-output '.Credentials.AccessKeyId')
+  local expiration=$(echo "$session_token" | jq --raw-output '.Credentials.Expiration')
+  echo "Set expiration token! It's valid until $expiration"
+  echo '=== Bye! ==='
+}
+
+aws_mfa_unset() {
+  unset AWS_ACCESS_KEY_ID
+  unset AWS_SECRET_ACCESS_KEY
+  unset AWS_SESSION_TOKEN
+}
