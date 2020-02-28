@@ -30,8 +30,9 @@
     "command": "editor.action.transformToLowercase",
     "when": "editorTextFocus && !editorReadonly"
   },
-  // {
-  //   "key": "ctrl+shift+q",
-  //   "command": "workbench.action.toggleMaximizedPanel"
-  // }
+  {
+    "key": "ctrl+alt+z",
+    "command": "workbench.action.toggleZenMode",
+    "when": "editorTextFocus && !editorReadonly"
+  }
 ]

@@ -23,5 +23,9 @@
   "require": {
     "prefix": "req",
     "body": ["const { $2 } = require('$1')$0"]
+  },
+  "destructure": {
+    "prefix": "des",
+    "body": ["const { $2 } = $1$0"]
   }
 }

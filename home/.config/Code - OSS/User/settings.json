@@ -138,4 +138,8 @@
     ".functions": "shellscript"
   },
   "workbench.iconTheme": "vscode-icons",
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+  "zenMode.centerLayout": false,
+  "debug.allowBreakpointsEverywhere": true,
 }

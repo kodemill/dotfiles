@@ -22,4 +22,18 @@
     "prefix": "conss",
     "body": ["console.log('$1', JSON.stringify($1, null, 2))$0"]
   },
+
+  "destructure": {
+    "prefix": "des",
+    "body": ["const { $2 } = $1$0"]
+  },
+
+  "forawaitof": {
+    "prefix": "fora",
+    "body": [
+      "for await (const $2 of $1) {",
+      "  $0",
+      "}"
+    ]
+  }
 }

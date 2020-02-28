@@ -77,6 +77,7 @@ aws_mfa() {
   export AWS_SESSION_TOKEN=$(echo "$session_token" | jq --raw-output '.Credentials.SessionToken')
   export AWS_SECRET_ACCESS_KEY=$(echo "$session_token" | jq --raw-output '.Credentials.SecretAccessKey')
   export AWS_ACCESS_KEY_ID=$(echo "$session_token" | jq --raw-output '.Credentials.AccessKeyId')
+  unset AWS_PROFILE
   local expiration=$(echo "$session_token" | jq --raw-output '.Credentials.Expiration')
   echo "Set expiration token! It's valid until $expiration"
   echo '=== Bye! ==='
@@ -86,4 +87,5 @@ aws_mfa_unset() {
   unset AWS_ACCESS_KEY_ID
   unset AWS_SECRET_ACCESS_KEY
   unset AWS_SESSION_TOKEN
+  export AWS_PROFILE="$AWS_DEFAULT_PROFILE"
 }
