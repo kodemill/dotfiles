@@ -67,22 +67,10 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[terraform]": {
+    "editor.defaultFormatter": "mauve.terraform"
+  },
   "standard.usePackageJson": true,
-  /*
-  terraform
-  */
-  "terraform.languageServer": {
-    "enabled": true,
-    "args": []
-  },
-  "terraform.indexing": {
-    "enabled": false,
-    "liveIndexing": false,
-    "delay": 500,
-    "exclude": [
-      "**/*"
-    ]
-  },
   /*
   vsicons
   */
@@ -142,4 +130,6 @@
   "zenMode.hideTabs": false,
   "zenMode.centerLayout": false,
   "debug.allowBreakpointsEverywhere": true,
+  "aws.telemetry": false,
+  "aws.profile": "profile:kodemill",
 }
