@@ -130,6 +130,8 @@
   "zenMode.hideTabs": false,
   "zenMode.centerLayout": false,
   "debug.allowBreakpointsEverywhere": true,
-  "aws.telemetry": false,
-  "aws.profile": "profile:kodemill",
+  "aws.samcli.location": "/home/kodemill/.local/bin/sam",
+  "[scad]": {
+  
+  },
 }

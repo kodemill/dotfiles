@@ -39,17 +39,3 @@ function format_text () {
 function info () {
   echo -e "$(format_text $FG_GREEN $BG_DARK_GRAY $BOLD)[ INFO ]$(format_text) ${1}"
 }
-
-
-# function confirm () {
-#   echo keekek
-#   local question=${1-"Are you completely sure?"}
-#   echo -e "$(format_text $FG_YELLOW $BG_DARK_GRAY $BOLD) $question [y/N]$(format_text)"
-#   read response
-#   if [[ $response =~ ^([yY][eE][sS]|[yY])+$ ]]
-#   then
-#     echo 1
-#   else
-#     echo 0
-#   fi
-# }

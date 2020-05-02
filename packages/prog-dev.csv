@@ -18,3 +18,4 @@
 "emoji fonts","Color noto emoji font","noto-fonts-emoji",pac
 "neofetch","terminal OS info","neofetch",yay
 "bind-tools","bind-tools provides dig(1), host(1), nslookup(1) and a bunch of dnssec- tools.","bind-tools",pac
+#"git-delta","syntax-highlighter for git and diff output","git-delta",yay

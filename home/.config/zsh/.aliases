@@ -16,8 +16,12 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\\: .*|GET \\/.*\""
 
 
-alias open="$opener";
+alias open=xdg-open;
 alias o='a -e xdg-open'
 
 alias ls='ls --color=auto'
 alias ll='ls -lah --color=auto'
+
+# git
+alias gpr='git pull --rebase'
+alias gpra='git pull --rebase --autostash'

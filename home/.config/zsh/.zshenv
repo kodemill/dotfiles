@@ -18,5 +18,4 @@ source $ZDOTDIR/.aliases
 export EMOJI_CLI_USE_EMOJI="true"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 
-# export NVM_DIR="$HOME/.nvm"
-# export NVM_SOURCE="/usr/share/nvm"
+export AWS_VAULT_BACKEND="pass"
