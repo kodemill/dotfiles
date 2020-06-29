@@ -13,18 +13,18 @@
   //   "description": "Log output to console"
   // }
   "console.log variable": {
-    "prefix": "cons",
+    "prefix": ["cons", "log"],
     "body": [
       "console.log('$1', $1)$0"
     ]
   },
   "console.log stringified variable": {
-    "prefix": "conss",
-    "body": ["console.log('$1', JSON.stringify($1, null, 2))$0"]
+    "prefix": ["conss", "logstr"],
+    "body": ["console.log(JSON.stringify($1, null, 2))$0"]
   },
 
   "destructure": {
-    "prefix": "des",
+    "prefix": ["destr", "destruct"],
     "body": ["const { $2 } = $1$0"]
   },
 
@@ -35,5 +35,27 @@
       "  $0",
       "}"
     ]
+  },
+  "testcase": {
+    "prefix": ["tes", "test"],
+    "body": [
+      "test('$1', async () => {",
+      "  $0",
+      "})"
+    ]
+  },
+  "describeTestcase": {
+    "prefix": ["tesd", "desc"],
+    "body": [
+"describe('$1', () => {",
+"  test('$2', async () => {",
+"    $0",
+"  })",
+"})"
+    ]
+  },
+  "expect": {
+    "prefix": ["ex", "exp"],
+    "body": "expect($1).$2"
   }
 }

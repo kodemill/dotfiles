@@ -14,18 +14,48 @@
   // }
   "console.log variable": {
     "prefix": "cons",
-    "body": ["console.log('$1', $1)$0"]
+    "body": [
+      "console.log('$1', $1)$0"
+    ]
   },
   "console.log stringified variable": {
     "prefix": "conss",
-    "body": ["console.log('$1', JSON.stringify($1, null, 2))$0"]
+    "body": [
+      "console.log('$1', JSON.stringify($1, null, 2))$0"
+    ]
   },
   "require": {
     "prefix": "req",
-    "body": ["const { $2 } = require('$1')$0"]
+    "body": [
+      "const { $2 } = require('$1')$0"
+    ]
   },
   "destructure": {
     "prefix": "des",
-    "body": ["const { $2 } = $1$0"]
+    "body": [
+      "const { $2 } = $1$0"
+    ]
+  },
+  "testcase": {
+    "prefix": ["tes", "test"],
+    "body": [
+      "test('$1', async () => {",
+      "  $0",
+      "})"
+    ]
+  },
+  "describeTestcase": {
+    "prefix": ["tesd", "desc"],
+    "body": [
+"describe('$1', () => {",
+"  test('$2', async () => {",
+"    $0",
+"  })",
+"})"
+    ]
+  },
+  "expect": {
+    "prefix": ["ex", "exp"],
+    "body": "expect($1).$2"
   }
 }

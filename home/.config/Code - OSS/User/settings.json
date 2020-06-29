@@ -5,9 +5,13 @@
     80,
     120
   ],
+  "editor.formatOnSave": false,
   "editor.overviewRulerBorder": false,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#35121e"
+  },
+  "editor.codeActionsOnSave": {"source.fixAll": false
+    // "source.fixAll": true
   },
   "workbench.colorTheme": "Horizon Bold",
   "workbench.list.keyboardNavigation": "simple",
@@ -17,7 +21,7 @@
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontSize": 15,
   "editor.suggestSelection": "first",
-  "editor.defaultFormatter": "remimarsal.prettier-now",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "explorer.openEditors.visible": 0,
   "explorer.autoReveal": false,
   "explorer.confirmDragAndDrop": false,
@@ -56,7 +60,7 @@
     "editor.defaultFormatter": "remimarsal.prettier-now"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "remimarsal.prettier-now"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
     "editor.defaultFormatter": "remimarsal.prettier-now"
@@ -110,6 +114,7 @@
   ],
   "cSpell.userWords": [
     "JSONB",
+    "brotli",
     "gluegun",
     "healthcheck",
     "kodemill",
@@ -121,17 +126,32 @@
   "[shellscript]": {
     "editor.colorDecorators": false
   },
-  "bashIde.highlightParsingErrors": false,
   "files.associations": {
-    ".functions": "shellscript"
+    ".functions": "shellscript",
+    ".uglifyrc": "jsonc"
   },
   "workbench.iconTheme": "vscode-icons",
   "zenMode.hideLineNumbers": false,
   "zenMode.hideTabs": false,
   "zenMode.centerLayout": false,
   "debug.allowBreakpointsEverywhere": true,
-  "aws.samcli.location": "/home/kodemill/.local/bin/sam",
-  "[scad]": {
+  "[scad]": {},
+  "eslint.format.enable": true,
+  "timeline.excludeSources": [
+    "git-history"
+  ],
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
   
+    "enabled": true,
+    "args": []
   },
 }
