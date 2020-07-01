@@ -155,4 +155,6 @@
     "args": []
   },
   "rest-client.followredirect": false,
+  "rest-client.enableTelemetry": false,
+  "rest-client.rememberCookiesForSubsequentRequests": false
 }
