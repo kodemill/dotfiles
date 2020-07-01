@@ -106,9 +106,16 @@ eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp z
 # [ -s "$NVM_SOURCE/nvm.sh" ] && source "$NVM_SOURCE/nvm.sh"  # Load NVM
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# load fzf
-# [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
-# if [ -d '/usr/share/fzf' ] ; then
-#   source /usr/share/fzf/key-bindings.zsh
-#   source /usr/share/fzf/completion.zsh
-# fi
+
+# set window title to current dir or running program
+function set-title-precmd() {
+  printf "\e]2;%s\a" "${PWD/#$HOME/~}"
+}
+
+function set-title-preexec() {
+  printf "\e]2;%s\a" "$1"
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd set-title-precmd
+add-zsh-hook preexec set-title-preexec
