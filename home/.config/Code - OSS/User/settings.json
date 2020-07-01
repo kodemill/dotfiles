@@ -154,4 +154,5 @@
     "enabled": true,
     "args": []
   },
+  "rest-client.followredirect": false,
 }
