@@ -1,16 +1,14 @@
 {
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.formatOnSave": false,
   "editor.overviewRulerBorder": false,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#35121e"
   },
-  "editor.codeActionsOnSave": {"source.fixAll": false
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false
     // "source.fixAll": true
   },
   "workbench.colorTheme": "Horizon Bold",
@@ -57,10 +55,10 @@
     "tf": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "remimarsal.prettier-now"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "remimarsal.prettier-now"
@@ -137,22 +135,18 @@
   "debug.allowBreakpointsEverywhere": true,
   "[scad]": {},
   "eslint.format.enable": true,
-  "timeline.excludeSources": [
-    "git-history"
-  ],
+  "timeline.excludeSources": ["git-history"],
   "terraform.indexing": {
     "enabled": false,
     "liveIndexing": false,
     "delay": 500,
-    "exclude": [
-      ".terraform/**/*",
-      "**/.terraform/**/*"
-    ]
+    "exclude": [".terraform/**/*", "**/.terraform/**/*"]
   },
   "terraform.languageServer": {
-  
-    "enabled": true,
-    "args": []
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
   "rest-client.followredirect": false,
   "rest-client.enableTelemetry": false,
