@@ -33,7 +33,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # colors!
 zstyle ':completion:*' extra-verbose true
 zstyle ':completion:*:-command-:*:' verbose true
 zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' special-dirs true
 
 # key bindings
 # https://wiki.archlinux.org/index.php/zsh#Key_bindings
