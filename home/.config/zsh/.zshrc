@@ -110,7 +110,7 @@ eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp z
 
 # set window title to current dir or running program
 function set-title-precmd() {
-  printf "\e]2;%s\a" "${PWD/#$HOME/~}"
+  printf "\e]2;%s\a" "$(sed "s|^${HOME}|~|;s:\([^/]\)[^/]*/:\1/:g" <<<$PWD)"
 }
 
 function set-title-preexec() {
