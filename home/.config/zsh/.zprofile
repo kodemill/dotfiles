@@ -14,8 +14,12 @@ if [ -d "$HOME/.cargo/bin" ] ; then
   PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-if [ -d /home/linuxbrew/.linuxbrew ] ; then
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -d "$HOME/.local/kitty.app" ] ; then
+  PATH="$HOME/.local/kitty.app/bin:$PATH"
 fi
+
+# if [ -d /home/linuxbrew/.linuxbrew ] ; then
+#   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# fi
 
 export PATH="$HOME/.cargo/bin:$PATH"

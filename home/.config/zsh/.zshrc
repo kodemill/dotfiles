@@ -95,7 +95,7 @@ fi
 [ -f ~/.config/zsh/.p10k.zsh ] && source ~/.config/zsh/.p10k.zsh
 
 # Completion for kitty
-kitty + complete setup zsh | source /dev/stdin
+[ -x "$(command -v kitty)" ] && kitty + complete setup zsh | source /dev/stdin
 
 # init fasd
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
@@ -104,7 +104,7 @@ eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp z
 [ -f $ZDOTDIR/generated-zsh-plugins.zsh ] && source $ZDOTDIR/generated-zsh-plugins.zsh
 
 # load nvm
-# [ -s "$NVM_SOURCE/nvm.sh" ] && source "$NVM_SOURCE/nvm.sh"  # Load NVM
+[ -s "$NVM_SOURCE/nvm.sh" ] && source "$NVM_SOURCE/nvm.sh"  # Load NVM
 [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
