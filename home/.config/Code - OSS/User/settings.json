@@ -55,13 +55,13 @@
     "tf": true
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
-    "editor.defaultFormatter": "remimarsal.prettier-now"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -111,15 +111,23 @@
     "yml"
   ],
   "cSpell.userWords": [
+    "Deletable",
     "JSONB",
+    "Middlewares",
+    "Postgres",
     "brotli",
     "gluegun",
     "healthcheck",
     "kodemill",
+    "mediabox",
+    "octokit",
     "openapi",
     "promisify",
+    "repos",
     "submodule",
-    "walkthrough"
+    "varchar",
+    "walkthrough",
+    "xstate"
   ],
   "[shellscript]": {
     "editor.colorDecorators": false
@@ -150,5 +158,9 @@
   },
   "rest-client.followredirect": false,
   "rest-client.enableTelemetry": false,
-  "rest-client.rememberCookiesForSubsequentRequests": false
+  "rest-client.rememberCookiesForSubsequentRequests": false,
+  "[sql]": {
+  
+  },
+  "editor.cursorBlinking": "expand"
 }
