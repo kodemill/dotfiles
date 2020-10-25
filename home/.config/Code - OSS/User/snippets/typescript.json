@@ -13,21 +13,32 @@
   //   "description": "Log output to console"
   // }
   "console.log variable": {
-    "prefix": ["cons", "log"],
+    "prefix": [
+      "cons",
+      "log"
+    ],
     "body": [
       "console.log('$1', $1)$0"
     ]
   },
   "console.log stringified variable": {
-    "prefix": ["conss", "logstr"],
-    "body": ["console.log(JSON.stringify($1, null, 2))$0"]
+    "prefix": [
+      "conss",
+      "logstr"
+    ],
+    "body": [
+      "console.log(JSON.stringify($1, null, 2))$0"
+    ]
   },
-
   "destructure": {
-    "prefix": ["destr", "destruct"],
-    "body": ["const { $2 } = $1$0"]
+    "prefix": [
+      "destr",
+      "destruct"
+    ],
+    "body": [
+      "const { $2 } = $1$0"
+    ]
   },
-
   "forawaitof": {
     "prefix": "fora",
     "body": [
@@ -37,7 +48,10 @@
     ]
   },
   "testcase": {
-    "prefix": ["tes", "test"],
+    "prefix": [
+      "tes",
+      "test"
+    ],
     "body": [
       "test('$1', async () => {",
       "  $0",
@@ -45,17 +59,65 @@
     ]
   },
   "describeTestcase": {
-    "prefix": ["tesd", "desc"],
+    "prefix": [
+      "tesd",
+      "desc"
+    ],
     "body": [
-"describe('$1', () => {",
-"  test('$2', async () => {",
-"    $0",
-"  })",
-"})"
+      "describe('$1', () => {",
+      "  test('$2', async () => {",
+      "    $0",
+      "  })",
+      "})"
     ]
   },
   "expect": {
-    "prefix": ["ex", "exp"],
+    "prefix": [
+      "ex",
+      "exp"
+    ],
     "body": "expect($1).$2"
+  },
+  "CdkConstruct": {
+    "prefix": [
+      "cdkc",
+      "cdkcon"
+    ],
+    "body": [
+      "import { Construct } from \"@aws-cdk/core\";",
+      "",
+      "export interface $1Props {",
+      "  $2",
+      "}",
+      "",
+      "export class $1 extends Construct {",
+      "  constructor(scope: Construct, id: string, props: $1Props) {",
+      "    super(scope, id);",
+      "    const {$3} = props;",
+      "    $0",
+      "  }",
+      "}",
+    ]
+  },
+  "CdkStack": {
+    "prefix": [
+      "cdks",
+      "cdksta"
+    ],
+    "body": [
+      "import { Stack, StackProps } from \"@aws-cdk/core\";",
+      "",
+      "export interface $1Props extends StackProps {",
+      "  $2",
+      "}",
+      "",
+      "export class $1Stack extends Stack {",
+      "  constructor(scope: Construct, props: $1Props, id: string = \"$1\") {",
+      "    super(scope, id, props);",
+      "    const {$3} = props;",
+      "    $0",
+      "  }",
+      "}",
+    ]
   }
 }

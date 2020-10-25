@@ -111,20 +111,31 @@
     "yml"
   ],
   "cSpell.userWords": [
+    "Dedupe",
     "Deletable",
     "JSONB",
     "Middlewares",
     "Postgres",
+    "Precommit",
+    "bigserial",
     "brotli",
+    "certificatemanager",
+    "cqrs",
+    "execa",
     "gluegun",
     "healthcheck",
+    "hstore",
+    "jaystack",
     "kodemill",
     "mediabox",
     "octokit",
     "openapi",
     "promisify",
     "repos",
+    "retryable",
+    "sogur",
     "submodule",
+    "timestamptz",
     "varchar",
     "walkthrough",
     "xstate"
@@ -162,5 +173,6 @@
   "[sql]": {
   
   },
-  "editor.cursorBlinking": "expand"
+  "editor.cursorBlinking": "expand",
+  "files.hotExit": "off"
 }
