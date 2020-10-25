@@ -77,8 +77,8 @@
       # gcloud                # google cloud cli acccount and project (https://cloud.google.com/)
       # google_app_cred       # google application credentials (https://cloud.google.com/docs/authentication/production)
       context                 # user@hostname
-      nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
-      ranger                  # ranger shell (https://github.com/ranger/ranger)
+      # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
+      # ranger                  # ranger shell (https://github.com/ranger/ranger)
       vim_shell               # vim shell indicator (:sh)
       # midnight_commander    # midnight commander shell (https://midnight-commander.org/)
       # vpn_ip                # virtual private network indicator
