@@ -19,3 +19,4 @@ export EMOJI_CLI_USE_EMOJI="true"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
 
 export AWS_VAULT_BACKEND="pass"
+source "$HOME/.cargo/env"

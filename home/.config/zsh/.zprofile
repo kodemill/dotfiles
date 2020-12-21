@@ -22,7 +22,6 @@ fi
 #   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 # fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 
 
