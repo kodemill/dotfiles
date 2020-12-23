@@ -100,7 +100,7 @@ install_programs $dotfiles/packages/prog-user.csv 'Installing user programs'
 clear
 
 install_docker
-install_vbox
+#install_vbox
 
 log 'Running user setup'
 sudo -u "$username" $dotfiles/scripts/install_user.sh | tee -a $logfile | \

@@ -34,3 +34,5 @@
   pr = pull --rebase origin master
   rh = reset --hard
   s = status
+[commit]
+	gpgsign = true
