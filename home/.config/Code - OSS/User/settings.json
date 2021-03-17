@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.rulers": [80, 120],
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.overviewRulerBorder": false,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#35121e"
@@ -24,7 +24,6 @@
   "explorer.autoReveal": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "window.zoomLevel": -1,
   "extensions.ignoreRecommendations": false,
   "javascript.suggestionActions.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -58,7 +57,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -111,12 +110,14 @@
     "yml"
   ],
   "cSpell.userWords": [
+    "Aquaponics",
     "Dedupe",
     "Deletable",
     "JSONB",
     "Middlewares",
     "Postgres",
     "Precommit",
+    "antd",
     "assetbox",
     "bigserial",
     "brotli",
@@ -176,5 +177,14 @@
   
   },
   "editor.cursorBlinking": "expand",
-  "files.hotExit": "off"
+  "files.hotExit": "off",
+  "eslint.alwaysShowStatus": true,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "tabnine.experimentalAutoImports": true,
+  "window.zoomLevel": -1
 }
